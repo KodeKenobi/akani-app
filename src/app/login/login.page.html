@@ -1,0 +1,76 @@
+<ion-header [translucent]="true" no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+    <div class="app-logo"></div>
+
+    <div class="intro">
+        <ion-item no-padding class="animated fadeInUp">
+            <ion-label position="floating">
+                <ion-icon name="mail" item-start></ion-icon>
+                Email
+            </ion-label>
+            <ion-input type="text" #email required></ion-input>
+        </ion-item>
+
+        <ion-item no-padding class="animated fadeInUp">
+            <ion-label position="floating">
+                <ion-icon name="key"></ion-icon>
+                Password
+            </ion-label>
+            <ion-input type="password" #password required></ion-input>
+        </ion-item>
+    </div>
+
+    <ion-row class="form">
+        <ion-col>
+
+            <ion-button class="btns" type="submit" (click)="logIn(email, password)" expand="block">
+                Sign In
+            </ion-button>
+
+        </ion-col>
+    </ion-row>
+
+    <div class="social">
+
+        <ion-button class="btns" expand="block" color="warning" [routerLink]="['/password-reset']">
+            Password Reset
+        </ion-button>
+
+        <p class="signup">
+            <ion-text color="white">
+                Or Sign In With:
+            </ion-text>
+        </p>
+
+        <ion-grid class="btn-group">
+            <ion-row>
+                <ion-col size="4">
+                    <ion-button shape="round" expand="full" color="secondary">
+                        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button shape="round" expand="full" color="secondary">
+                        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button shape="round" expand="full" color="secondary" type="submit" color="danger" (click)="authService.GoogleAuth()" expand="block">
+                        <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </div>
+
+
+</ion-content>

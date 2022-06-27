@@ -1,0 +1,123 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <ion-text color="white">
+                <ion-text class="fw700">Transactions</ion-text>
+            </ion-text>
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+                <ion-icon name="notifications"></ion-icon>
+                <ion-badge color="dark" slot="end">2</ion-badge>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+        <ion-buttons slot="end">
+            <ion-button size="small" shape="round" (click)="searchFilter()">
+                <ion-icon name="options"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>Transactions</ion-label>
+            <ion-icon color="danger" name="trash" slot="end"></ion-icon>
+        </ion-item>
+    </ion-list>
+
+    <ion-card>
+        <ion-card-header color="primary">
+            <ion-card-title class="header">Your Transactions</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content color="light">
+            <ion-row align-items-center>
+                <ion-col size="1">
+                    <ion-icon size="large" name="create"></ion-icon>
+                </ion-col>
+                <ion-col size="10">
+                    <ion-input placeholder="Edit your information" type="text"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-icon (click)="insert()" color="success" name="checkmark" size="large"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6">
+                <ion-label>
+                    <ion-note class="note">
+                        CARD BALANCE
+                    </ion-note>
+                    <p>
+                        <ion-chip color="dark">
+                            <ion-label class="label">
+                                R1120500
+                            </ion-label>
+                        </ion-chip>
+                    </p>
+                </ion-label>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+                <ion-button color="primary" size="small">
+                    <ion-text color="dark">Add recipient</ion-text>
+                    <ion-icon name="add" color="light" slot="end"></ion-icon>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal ion-margin-top">
+            <ion-col>
+                <ion-label color="primary">
+                    <b>All features</b>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-margin-horizontal">
+            <ion-col *ngFor="let item of features" size="6">
+                <ion-card class="ion-text-center">
+                    <ion-card-header>
+                        <div class="ion-text-center">
+                            <ion-thumbnail class="ion-text-center" [style.background]="item?.background">
+                                <img [src]="item?.src" />
+                            </ion-thumbnail>
+                        </div>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-label class="ion-text-center" color="light">{{ item?.name }}</ion-label>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+        <ion-list>
+            <ion-list-header>
+                <ion-label>RECENT TRANSACTIONS</ion-label>
+            </ion-list-header>
+            <ion-item lines="none" *ngFor="let item of transactions">
+                <ion-icon slot="start" name="cash" color="primary"></ion-icon>
+                <ion-label size="large" class="ion-text-wrap">
+                    <b>{{item.vendor}}</b>
+                    <p>
+                        {{item?.time}}
+                    </p>
+                </ion-label>
+                <ion-text slot="end" [color]="item?.amount > 0 ? 'success' : 'danger'">R{{item?.amount}}</ion-text>
+            </ion-item>
+        </ion-list>
+    </ion-grid>
+
+
+</ion-content>

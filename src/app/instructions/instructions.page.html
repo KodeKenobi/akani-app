@@ -1,0 +1,239 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Instructions</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-grid>
+            <ion-row justify-content-center align-items-center>
+                <ion-spinner name="dots"></ion-spinner>
+                <ion-label> &nbsp;No data loading</ion-label>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+
+    <ion-row style="border-bottom: groove;">
+        <ion-col col-4>
+            <ion-label>Type</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>Date</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>Ref No</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: groove;">
+        <ion-col col-4>
+            <ion-label>Policy</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>02/02/2018</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>PY7HAH4</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: groove;">
+        <ion-col col-4>
+            <ion-label>Fund</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>02/02/2014</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>S778P09</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-4>
+            <ion-label>Retirement</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>02/02/2012</ion-label>
+        </ion-col>
+        <ion-col col-4>
+            <ion-label>9998KAA</ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-grid class="ion-text-center">
+
+        <ion-row class="ion-margin">
+            <ion-col>
+                <ion-title>
+                    <ion-text color="default">
+                        Instructions Submitted
+                    </ion-text>
+                </ion-title>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="header-row">
+            <ion-col>
+                <ion-text>Date</ion-text>
+            </ion-col>
+
+            <ion-col>
+                <ion-text>Email</ion-text>
+            </ion-col>
+
+            <ion-col>
+                <ion-text>Ref No</ion-text>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col class="details">
+                <ion-text>
+                    19/10/2022
+                </ion-text>
+            </ion-col>
+
+            <ion-col class="details">
+                <ion-text>
+                    {{ userDetail }}
+                </ion-text>
+            </ion-col>
+
+            <ion-col class="details">
+                <ion-text>
+                    R207800
+                </ion-text>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-grid fixed>
+
+        <ion-card>
+            <ion-item>
+                <ion-icon color="danger" name="trash" slot="end"></ion-icon>
+                <ion-label>Instructions</ion-label>
+            </ion-item>
+            <ion-row align-items-center padding>
+                <ion-col size="1.5" offset="0.5">
+                    <img class="icone" src="../../assets/icon/target.png">
+                </ion-col>
+                <ion-col size="4">
+                    <ion-label>Policy</ion-label>
+                    <ion-row>
+                        <ion-label>R3490275</ion-label>
+                    </ion-row>
+                </ion-col>
+                <ion-col size="1.5" offset="0.5">
+                    <img class="icone" src="../../assets/icon/pig.png">
+                </ion-col>
+                <ion-col size="4">
+                    <ion-label>Savings</ion-label>
+                    <ion-row>
+                        <ion-label>R569876</ion-label>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+        <ion-row justify-content-center align-items-center>
+            <ion-col size="12" align-self-center>
+                <ion-button strong="true" expand="block" (click)="add()">
+                    <ion-icon slot="start" name="add"></ion-icon>
+                    Add Objective
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-card>
+
+        <ion-list insert>
+            <ion-grid>
+                <ion-row align-items-center>
+                    <ion-col size="1.25">
+                        <ion-icon size="large" name="home"></ion-icon>
+                    </ion-col>
+                    <ion-col size="8">
+                        <ion-input class="valor" placeholder="Look For Branches Around" type="text">
+                        </ion-input>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row align-items-center>
+                    <ion-col size="1.25">
+                        <ion-icon size="large" name="create"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                        <ion-input placeholder="Submit Your Credentials" type="text"></ion-input>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row align-items-center>
+                    <ion-col size="1">
+                        <ion-icon size="large" name="pricetag"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                        <ion-select interface="alert" cancelText="Cancel" color="primary" placeholder="Apply For Policy">
+                            <ion-select-option>
+                                Retirement Fund
+                            </ion-select-option>
+                            <ion-select-option>
+                                Funeral Cover
+                            </ion-select-option>
+
+                        </ion-select>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row align-items-center>
+                    <ion-col size="1">
+                        <ion-icon size="large" name="calendar"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                        <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row align-items-center>
+                    <ion-col size="1">
+                        <ion-icon size="large" name="wallet"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                        <ion-select color="primary" placeholder="Category" interface="popover">
+                            <ion-select-option>Category
+                            </ion-select-option>
+                        </ion-select>
+                    </ion-col>
+                </ion-row>
+                <!-- 
+      <ion-row>
+        <ion-col size="12">
+          <ion-segment mode="ios">
+            <ion-segment-button>
+              <ion-icon name="pin"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button>
+              <ion-icon name="camera"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row> -->
+
+            </ion-grid>
+        </ion-list>
+    </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button class="submit-btn" (click)="submit()" type="submit">
+            <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

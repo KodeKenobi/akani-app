@@ -1,0 +1,26 @@
+<ion-content>
+    <div class="app-logo"></div>
+    <form class="form">
+        <ion-item class="field">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" #email required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" #password required></ion-input>
+        </ion-item>
+
+        <ion-row class="signup-form">
+            <ion-col>
+                <ion-button class="btns" type="submit" (click)="signUp(email, password)" expand="block">Register</ion-button>
+                <p class="signup">
+                    <ion-text color="white">
+                        Already A User?
+                    </ion-text>
+                </p>
+                <ion-button class="btns" [routerLink]="['/login']" expand="block" color="dark">Sign In</ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

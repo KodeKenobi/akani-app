@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>About</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile">
+    <ion-card>
+        <ion-card-content>
+            <img src="../../assets/img/profile.png">
+            <h1 class="fw500">{{ userName }}</h1>
+            <p color="light" margin-bottom><strong>{{ userDetail }}</strong></p>
+            <ion-button color="primary">
+                Edit / Add Avatar
+            </ion-button>
+        </ion-card-content>
+
+        <ion-grid fixed no-padding>
+            <ion-row>
+                <ion-col size="12" padding>
+
+                    <ion-list margin-bottom>
+                        <ion-list-header color="light">
+                            <ion-label>Edit Your Details</ion-label>
+                        </ion-list-header>
+
+                        <ion-item>
+                            <ion-label color="dark" position="stacked">Full Name:</ion-label>
+                            <ion-input inputmode="text" placeholder="" value="" #fullname required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label color="dark" position="stacked">Email:</ion-label>
+                            <ion-input inputmode="email" placeholder="" value="" #email required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label color="dark" position="stacked">Address:</ion-label>
+                            <ion-input inputmode="" placeholder="" #address required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label color="dark">City</ion-label>
+                            <ion-select #city required>
+                                <ion-select-option value="nes">New York</ion-select-option>
+                                <ion-select-option value="n64">Los Angeles</ion-select-option>
+                                <ion-select-option value="ps">London</ion-select-option>
+                                <ion-select-option value="genesis">Paris</ion-select-option>
+                                <ion-select-option value="saturn">São Paulo</ion-select-option>
+                                <ion-select-option value="snes">Tokyo</ion-select-option>
+                                <ion-select-option value="snes">New Delhi</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label color="dark">Province</ion-label>
+                            <ion-select #province required>
+                                <ion-select-option value="nes">NY</ion-select-option>
+                                <ion-select-option value="n64">CA</ion-select-option>
+                                <ion-select-option value="ps">Greater London</ion-select-option>
+                                <ion-select-option value="genesis">Paris</ion-select-option>
+                                <ion-select-option value="saturn">SP</ion-select-option>
+                                <ion-select-option value="snes">Kantō</ion-select-option>
+                                <ion-select-option value="snes">Delhi</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-list>
+                        <ion-radio-group>
+                            <ion-list-header color="light">
+                                <ion-label class="fw700">User Type</ion-label>
+                            </ion-list-header>
+
+                            <ion-item>
+                                <ion-label color="primary">Customer</ion-label>
+                                <ion-radio slot="start" value="customer" checked></ion-radio>
+                            </ion-item>
+
+                            <ion-item>
+                                <ion-label color="primary">Owner</ion-label>
+                                <ion-radio slot="start" value="agent"></ion-radio>
+                            </ion-item>
+                        </ion-radio-group>
+
+                        <ion-item>
+                            <ion-label class="text-1x">Remember Me</ion-label>
+                            <ion-checkbox></ion-checkbox>
+                        </ion-item>
+                    </ion-list>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-button type="submit" size="medium" expand="full" color="dark" (click)="sendData(fullname, email, address, city, province)" no-margin>Edit</ion-button>
+    </ion-card>
+
+
+</ion-content>
+
+<!--<ion-content>
+    <ion-content class="ion-padding">
+        <ion-grid>
+            <ion-row>
+                <ion-col text-center>
+                    Welcome User!
+
+                    <p>User email : <strong>{{ userDetail }}</strong></p>
+                </ion-col>
+            </ion-row>
+
+            <ion-button type="submit" color="danger" expand="block" (click)="signOut()">Signout</ion-button>
+        </ion-grid>
+    </ion-content>
+</ion-content>-->

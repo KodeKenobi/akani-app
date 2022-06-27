@@ -1,0 +1,21 @@
+ion-header {
+    background: transparent;
+}
+
+ion-content::part(scroll) {
+    padding-right: 0px;
+}
+
+.texting {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.body-text {
+    background-color: bisque;
+}
+
+.header-title {
+    color: #000 !important;
+    font-weight: bold;
+}

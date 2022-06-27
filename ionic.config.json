@@ -1,0 +1,8 @@
+{
+  "name": "akani-app-v1",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

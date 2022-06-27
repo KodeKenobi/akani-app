@@ -1,0 +1,44 @@
+.app-logo {
+    background-image: url(../../assets/img/logo-big.png);
+    height: 120px;
+    width: 100%;
+    background-repeat: no-repeat;
+    border-radius: none;
+    background-position: center;
+    background-size: contain;
+    background-color: none;
+    margin-top: 42px;
+}
+
+.signup {
+    text-align: center !important;
+}
+
+.signup-form {
+    margin-top: 10px;
+}
+
+.btns {
+    color: #fff !important;
+    border-color: #e4e8f0;
+    background-image: none;
+    background-color: transparent;
+    font-weight: 200!important;
+    line-height: 1.25;
+    border: 2px solid transparent;
+    padding: 0 20px 2px 20px;
+    font-size: 14px;
+    border-radius: 90px !important;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.form {
+    margin-top: 30px;
+}
+
+.intro {
+    margin-top: 40px;
+}
